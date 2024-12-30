@@ -1,0 +1,27 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<nz-layout>
+    <nz-header class="navbar">
+      <div class="navbar-content">
+        <div class="logo">E-Commerce Dashboard</div>
+  
+        <div class="navbar-center">
+          <div class="nav-item">
+            <a routerLink="/products" routerLinkActive="active-link">List Products</a>
+          </div>
+          <div class="nav-item">
+            <a routerLink="/cart" routerLinkActive="active-link">Cart</a>
+          </div>
+        </div>
+  
+        <div class="cart-status">
+            <nz-badge [nzCount]="cartCount$ || 0" [nzOverflowCount]="99" [nzShowZero]="true">
+                <i class="bi bi-cart" style="color: rgb(253, 253, 253); font-size: 18px; position: relative; top: 10px;"></i>
+              </nz-badge>
+              
+          </div>
+        
+      </div>
+    </nz-header>
+  </nz-layout>
+  

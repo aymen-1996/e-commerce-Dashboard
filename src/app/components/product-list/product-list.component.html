@@ -1,0 +1,62 @@
+<div class="filter-container">
+    <nz-input-group [nzSuffix]="suffixSearch" class="search-input" style="width: 400px; margin-right: 10px;">
+      <input 
+        nz-input 
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="filterProducts()"
+        placeholder="Filter by name"
+      />
+      <ng-template #suffixSearch>
+        <i nz-icon nzType="search" class="search-icon"></i>
+      </ng-template>
+    </nz-input-group>
+    
+    <nz-select 
+      [(ngModel)]="selectedCategory"
+      (ngModelChange)="filterProducts()"
+      [nzAllowClear]="true" 
+      placeholder="Filter by category" 
+      class="category-select"
+    >
+      <nz-option 
+        *ngFor="let category of getUniqueCategories()" 
+        [nzValue]="category.value" 
+        [nzLabel]="category.text">
+      </nz-option>
+    </nz-select>
+  </div>
+  
+  <br>
+  <nz-table
+    #basicTable
+    [nzBordered]="true"
+    [nzData]="filteredProducts"
+    [nzSize]="'middle'"
+    [nzTableLayout]="'fixed'"
+  >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th
+          [nzSortOrder]="sortOrderPrice"
+          [nzSortFn]="sortByPrice"
+          [nzSortDirections]="['ascend', 'descend']"
+        >
+          Price
+        </th>
+        <th>Category</th>
+        <th>Availability status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of basicTable.data">
+        <td>{{ product.title }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          {{ product.rating.count > 0 ? 'In Stock' : 'Out of Stock' }}
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+  

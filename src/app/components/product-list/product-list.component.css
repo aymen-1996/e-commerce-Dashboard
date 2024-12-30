@@ -1,0 +1,64 @@
+/* Conteneur pour centrer les éléments */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  /* Style du groupe d'input de recherche */
+  .search-input {
+    border-radius: 30px;  /* Bordures arrondies */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Ombre douce */
+    overflow: hidden;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Champ input avec bordures arrondies */
+  .search-input input {
+    border-radius: 30px;  /* Bordures arrondies pour l'input */
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #fff7f7;
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  
+  .search-input input:focus {
+    border-color: #1890ff;  /* Bordure bleue lors du focus */
+  }
+  
+  /* Icône de recherche */
+  .search-icon {
+    color: #1890ff;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  /* Sélecteur de catégorie */
+  .category-select {
+    border-radius: 30px;  /* Bordures arrondies */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Ombre douce */
+    background-color: #f9f9f9;
+    padding: 5px;
+    width: 300px;
+    font-size: 14px;
+  }
+  
+  .category-select .ant-select-selector {
+    border-radius: 30px;  /* Bordures arrondies */
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .category-select .ant-select-selector:focus {
+    border-color: #1890ff;  /* Bordure bleue lors du focus */
+  }
+  
+  /* Séparateur entre les éléments de filtre */
+  .filter-container input, .filter-container nz-select {
+    margin-right: 20px;
+  }
+  
