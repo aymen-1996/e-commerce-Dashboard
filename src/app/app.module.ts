@@ -14,16 +14,18 @@ import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductListComponent
+    ProductListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzSelectModule,  
     NzIconModule,
 NzBadgeModule,
+ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@
   
         <div class="navbar-center">
           <div class="nav-item">
-            <a routerLink="/products" routerLinkActive="active-link">List Products</a>
+            <a routerLink="/product" routerLinkActive="active-link">List Products</a>
           </div>
           <div class="nav-item">
             <a routerLink="/cart" routerLinkActive="active-link">Cart</a>
@@ -15,9 +15,67 @@
         </div>
   
         <div class="cart-status">
-            <nz-badge [nzCount]="cartCount$ || 0" [nzOverflowCount]="99" [nzShowZero]="true">
+            <nz-badge [nzCount]="cartCount" [nzOverflowCount]="99" [nzShowZero]="true" (click)="togglePendingCartDropdown()">
                 <i class="bi bi-cart" style="color: rgb(253, 253, 253); font-size: 18px; position: relative; top: 10px;"></i>
               </nz-badge>
+              
+              <div *ngIf="showPendingInvitesDropdown" class="css-1oknx5t">
+                <span class="arrow css-98b6ta"></span>
+                <div class="MuiBox-root css-3sojac">
+                  <div class="MuiBox-root css-i9gxme">
+                    <h6 class="MuiTypography-root MuiTypography-subtitle1 css-k9tjo5">Cart</h6>
+                    <hr class="MuiDivider-root MuiDivider-fullWidth css-zg4d8h">
+              
+                    <div *ngIf="cartItems && cartItems.length > 0; else emptyCart">
+                      <div class="scroll-container">
+                        <div class="css-jjtu05">
+                          <div data-simplebar="init" class="css-qw2e6q">
+                            <ul class="css-1uzmcsd">
+                                <li *ngFor="let item of cartItems" class="css-12ujxra" tabindex="0" role="button">
+                                    <div class="css-k008qs" style="display: flex; align-items: center; justify-content: space-between;">
+                                      <div style="display: flex; align-items: center;">
+                                        <img 
+                                          alt="Product Image" 
+                                          [src]="item.product.image" 
+                                          style="width: 60px; object-fit: cover; margin-right: 1em;">
+                                        <small class="justified-text">
+                                          <p>
+                                            <strong>{{ item.product.title }}</strong><br>
+                                            <strong>Quantity: {{ item.quantity }}</strong><br>
+                                            <strong>Price: {{ item.product.price * item.quantity | currency }}</strong>
+                                          </p>
+                                        </small>
+                                      </div>
+                                      <button 
+                                        class="remove-btn" 
+                                        (click)="removeFromCart(item.product)" 
+                                        aria-label="Remove Item">
+                                        X
+                                      </button>
+                                    </div>
+                                    <span class="MuiTouchRipple-root css-w0pj6f"></span>
+                                  </li>
+                                  
+                                  
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <h3>Total Price: {{ totalPrice | currency }}</h3>
+                    </div>
+              
+                    <ng-template #emptyCart>
+                        <div class="empty-cart">
+                          <p>Your cart is empty.</p>
+                        </div>
+                      </ng-template>
+                      
+              
+                    <hr class="MuiDivider-root MuiDivider-fullWidth css-zg4d8h">
+                  </div>
+                </div>
+              </div>
               
           </div>
         

@@ -1,0 +1,28 @@
+<nz-table #basicTable [nzData]="cartItems" [nzBordered]="true">
+    <thead>
+      <tr>
+        <th nzWidth="20%">Image</th>
+        <th nzWidth="50%">Product</th>
+        <th nzWidth="20%">Quantity</th>
+        <th nzWidth="20%">Price</th>
+        <th nzWidth="10%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        <td>
+          <img [src]="item.product.image" alt="{{ item.product.title }}" class="product-image" />
+        </td>
+        <td>{{ item.product.title }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.product.price * item.quantity | currency }}</td>
+        <td>
+          <button nz-button nzType="primary" (click)="removeFromCart(item.product)">Remove</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+  
+  <h3>Total Price: {{ totalPrice | currency }}</h3>
+  

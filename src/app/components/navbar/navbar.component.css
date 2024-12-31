@@ -72,4 +72,316 @@
       }
       
   }
+
+
+  .css-1oknx5t {
+    top: 50px; 
+    margin-left: -265px !important;
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 43, 54);
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 5px 5px -3px,
+                rgba(145, 158, 171, 0.14) 0px 8px 10px 1px,
+                rgba(145, 158, 171, 0.12) 0px 3px 14px 2px;
+    min-width: 16px;
+    min-height: 16px;
+    max-width: calc(100% - 32px);
+    width: 300px; 
+    margin-top: 12px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    outline: 0px;
+    padding: 0px;
+    overflow: inherit;
+    box-sizing: border-box; 
+    position: absolute;
+    z-index: 1000;
+
+  }
+  
+  
+  .css-1oknx5t h6,
+  .css-1oknx5t p {
+    margin: 0;
+    padding: 0; 
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  
+  .MuiListItem-root.css-1g5h4hs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px; 
+    margin: 8px 0; 
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .MuiListItem-root.css-1g5h4hs:hover {
+    background-color: #e3effd;
+    border-color: #b8c7d9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .MuiListItemText-root.css-1bbslg7 {
+    font-size: 16px;
+    color: #3b3f45;
+  }
+  
+  .MuiListItemText-root.css-1bbslg7 strong {
+    color: #1976d2;
+  }
+  
+  
+  .MuiTypography-body2.css-11r9ii4 {
+    font-size: 14px;
+    color: #333333;
+  }
+  
+  
+  .MuiButton-root {
+    margin-left: 8px;
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 4px;
+  }
+  @media (min-width: 600px) {
+    .css-98b6ta {
+        top: -7px;
+        z-index: 1;
+        width: 12px;
+        right: 20px;
+        height: 12px;
+        content: "";
+        position: absolute;
+        border-radius: 0px 0px 4px;
+        transform: rotate(-135deg);
+        background: rgb(255, 255, 255);
+        border-right: 1px solid rgba(145, 158, 171, 0.12);
+        border-bottom: 1px solid rgba(145, 158, 171, 0.12);
+    }
+  }
+  .css-3sojac {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 16px 20px;
+  }
+  
+  .css-i9gxme {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 600px;
+}
+
+
+
+.css-i9gxme {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+  }
+  .css-jjtu05 {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  .css-k9tjo5 {
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: "Public Sans", sans-serif;
+  }
+  
+  .css-11r9ii4 {
+    position: relative;
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    width: 200px;
+    color: rgb(99, 115, 129);
+  }
+  
+  .scroll-container {
+    max-height: 250px; 
+    overflow-y: hidden; 
+    padding: 0; 
+    margin: 0;
+    transition: overflow-y 0.3s ease;
+  }
+  
+  .scroll-container:hover {
+    overflow-y: auto; 
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    width: 8px; 
+    background-color: transparent; 
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px; 
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+  
+  .scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent; 
+  }
+  
+  .scroll-container:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.8) transparent;
+  }
+  
+
+  @media (min-width: 600px) {
+    .css-qw2e6q {
+        height: auto;
+    }
+  }
+  
+  .css-qw2e6q {
+    max-height: 100%;
+  }
+  
+  .css-1uzmcsd {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+  
+  .justified-text {
+    text-align: justify;  
+    font-size: 0.8em;    
+    line-height: 1.6;  
+    margin: 0;          
+    padding: 0;        
+  }
+  
+  .justified-text p {
+    margin-bottom: 0.5em; 
+    word-spacing: -0.1em;  
+  }
+
+
+  .css-12ujxra {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    color: inherit;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    min-width: 0px;
+    box-sizing: border-box;
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: 1px 0px 0px;
+    border-radius: 0px;
+    text-decoration: none;
+    background-color: transparent; 
+    transition: background-color 0.3s ease; 
+    border-bottom: 1.2px dashed rgba(94, 101, 107, 0.24);
+  }
+  
+  
+  
+  .css-12ujxra:last-child {
+    border-right: none;
+  }
+  
+  .css-12ujxra:hover{
+     background-color: #eceaea;
+  }
+  
+  [data-simplebar] {
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+  }
+  
+  .css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+  }
+  
+
+  .empty-cart {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .empty-cart p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+
+  .remove-btn {
+    background-color: #f44336;
+    color: #fff; 
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .remove-btn:hover {
+    background-color: #d32f2f; 
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .remove-btn:active {
+    transform: scale(0.95); 
+  }
   

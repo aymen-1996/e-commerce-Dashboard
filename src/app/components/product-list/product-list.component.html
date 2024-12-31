@@ -24,10 +24,122 @@
         [nzLabel]="category.text">
       </nz-option>
     </nz-select>
+
+<button nz-button nzType="primary" (click)="openAddProductModal()">Add Product</button>
+
+<nz-modal 
+  [(nzVisible)]="isModalVisible" 
+  nzTitle="Add New Product" 
+  (nzOnCancel)="handleCancel()" 
+  (nzOnOk)="handleOk()">
+
+
+  <form *nzModalContent (ngSubmit)="addProduct()" #productForm="ngForm">
+    <label for="title">Title:</label>
+    <input
+      id="title"
+      [(ngModel)]="newProduct.title"
+      name="title"
+      placeholder="Enter product title"
+      required
+      #title="ngModel"
+    />
+    <div *ngIf="title.invalid && title.touched" class="error-message">
+      Title is required.
+    </div>
+  
+    <label for="price">Price:</label>
+    <input
+      id="price"
+      nz-input
+      type="number"
+      [(ngModel)]="newProduct.price"
+      name="price"
+      placeholder="Enter product price"
+      required
+      min="0"
+      #price="ngModel"
+    />
+    <div *ngIf="price.invalid && price.touched" class="error-message">
+      Price is required and must be greater than or equal to 0.
+    </div>
+  
+    <label for="category">Category:</label>
+    <select
+    id="category"
+    [(ngModel)]="newProduct.category"
+    name="category"
+    required
+    #category="ngModel"
+  >
+    <option *ngFor="let category of categoryList" [value]="category">{{ category }}</option>
+  </select>
+  <div *ngIf="category.invalid && category.touched" class="error-message">
+    Category is required.
+  </div>
+  
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      nz-input
+      [(ngModel)]="newProduct.description"
+      name="description"
+      placeholder="Enter product description"
+      required
+      rows="4"
+      style="width: 100%; resize: vertical;"
+      #description="ngModel"
+    ></textarea>
+    <div *ngIf="description.invalid && description.touched" class="error-message">
+      Description is required.
+    </div>
+  
+    <label for="count">Count:</label>
+    <input
+      id="rating.count"
+      nz-input
+      type="number"
+      [(ngModel)]="newProduct.rating.count"
+      name="rating.count"
+      placeholder="Enter product count"
+      required
+      min="0"
+      #count="ngModel"
+    />
+    <div *ngIf="count.invalid && count.touched" class="error-message">
+      Count is required and must be greater than or equal to 0.
+    </div>
+  
+    <label for="rate">Rate:</label>
+    <input
+      id="rating.rate"
+      nz-input
+      type="number"
+      [(ngModel)]="newProduct.rating.rate"
+      name="rating.rate"
+      placeholder="Enter product rate"
+      required
+      min="0"
+      max="30"
+      #rate="ngModel"
+    />
+    <div *ngIf="rate.invalid && rate.touched" class="error-message">
+      Rate is required and must be between 0 and 30.
+    </div>
+  
+    <button nz-button nzType="primary" type="submit" [disabled]="productForm.invalid">Add Product</button>
+  </form>
+  
+  
+  
+  
+  
+</nz-modal>
+
   </div>
   
   <br>
-  <nz-table
+  <nz-table 
     #basicTable
     [nzBordered]="true"
     [nzData]="filteredProducts"
@@ -46,6 +158,8 @@
         </th>
         <th>Category</th>
         <th>Availability status</th>
+        <th>Actions</th>
+
       </tr>
     </thead>
     <tbody>
@@ -56,6 +170,10 @@
         <td>
           {{ product.rating.count > 0 ? 'In Stock' : 'Out of Stock' }}
         </td>
+        <td>
+            <button nz-button nzType="primary" (click)="addToCart(product)">Add to Cart</button>
+          </td>
+    
       </tr>
     </tbody>
   </nz-table>

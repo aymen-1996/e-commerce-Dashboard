@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from 'src/app/module/product';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { CartService } from 'src/app/services/cart.service';
+import { ActivatedRoute } from '@angular/router';
 
 interface ColumnItem {
   name: string;
@@ -25,10 +28,30 @@ export class ProductListComponent implements OnInit {
   searchTerm = '';
   selectedCategory: string | null = null;
   sortOrderPrice: string | null = null;
-
-  constructor(private productService: ProductService) {}
+  categoryList: string[] = ['men\'s clothing', 'jewelery', 'electronics', 'women\'s clothing'];
+  newProduct: Product = {
+    id: 0,
+    title: '',
+    price: 0,
+    category: '',
+    rating: {
+      rate: 0,
+      count: 0 
+    },
+    description:''
+  };
+  
+  constructor(private productService: ProductService , private cartService: CartService,
+     private message: NzMessageService , private activatedRoute:ActivatedRoute 
+    ) {}
 
   ngOnInit(): void {
+
+    this.activatedRoute.data.subscribe((data: any) => {
+      const title = data.title || 'Titre par défaut';
+      document.title = ` ${title}`;
+    });
+
     this.ProductList();
     this.initializeColumns();
   }
@@ -81,5 +104,71 @@ export class ProductListComponent implements OnInit {
       return matchesName && matchesCategory;
     });
   }
-}
+  isModalVisible = false;
+
+
+    openAddProductModal(): void {
+      this.isModalVisible = true;
+    }
+  
+    handleCancel(): void {
+      this.isModalVisible = false;
+    }
+  
+    handleOk(): void {
+      this.addProduct();
+    }
+    
+    addProduct(): void {
+      if (!this.newProduct.title || !this.newProduct.price || !this.newProduct.category
+         || !this.newProduct.description ||!this.newProduct.rating.rate) {
+        this.message.error('All fields are required!');
+        return;
+      }
+  
+      this.productService.addProduct(this.newProduct).subscribe(
+        (response: any) => {
+          response.rating = {
+            count: this.newProduct.rating.count,
+            rate: this.newProduct.rating.rate
+          };
+  
+          this.products.unshift(response);
+          this.filteredProducts = [...this.products];
+  
+          console.log('Product added successfully', response);
+          this.message.success('Product added successfully!');
+  
+          // Reset newProduct
+          this.newProduct = {
+            id: 0,
+            title: '',
+            price: 0,
+            category: '',
+            rating: {
+              rate: 0,
+              count: 0
+            },
+            description: ''
+          };
+  
+          setTimeout(() => {
+            this.isModalVisible = false;
+          }, 1500);
+        },
+        error => {
+          console.error('Error adding product', error);
+          this.message.error('Error adding product');
+        }
+      );
+    }
+    
+  addToCart(product: Product): void {
+    this.cartService.addProductToCart(product); 
+  }
+  
+  }
+    
+    
+
 
