@@ -19,13 +19,15 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CartComponent } from './components/cart/cart.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProductListComponent,
-    CartComponent
+    CartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,32 @@
-# ECommerceDashboard
+# Application NestJs and angular 16 ,Public Api( https://fakestoreapi.com)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Features
 
-## Development server
+- Set up the Angular project, install dependencies, and configure NG-ZORRO.
+- Implement the product listing page with NG-ZORRO Table and sorting/searching.
+- Add the navbar and dynamically update the cart status using NG-ZORRO Badge.
+- Implement cart management and integrate cart updates into the navbar.
+- Implement the "Add Product" feature using an NG-ZORRO Modal with a fully functional form.
+- Product List in Page Home
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### Product List(**NG-ZORRO Table**)
+![# Page product](screenshots/productList.png)
 
-## Code scaffolding
+#### Add Product (**NG-ZORRO Modal** )
+![addProduct](screenshots/addProduct.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Cart Navbar
+![Navbar_Car](screenshots/Navbar_Cart.png)
 
-## Build
+#### Page Cart
+![Cart](screenshots/Cart.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Page Home (It's plus)
+![Page change Password](screenshots/ChangePass.png)
 
-## Running unit tests
+#### Video
+![Page Chat](screenshots/vedio.mp4)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contributors
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Chouaibi Mohamed Aymen](https://github.com/aymen-1996)

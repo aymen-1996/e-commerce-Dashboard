@@ -17,9 +17,13 @@
     .logo {
       font-size: 20px;
       font-weight: bold;
+      cursor: pointer;
       color: #fff;
     }
-  
+    .titlePrice{
+        color: #1890ff;
+
+    }
     .cart-status {
       display: flex;
       align-items: center;

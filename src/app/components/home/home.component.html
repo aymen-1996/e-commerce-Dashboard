@@ -1,0 +1,17 @@
+<div class="product-list-container">
+    <h2 class="product-list-title">Our Product Collection</h2> <!-- Titre au-dessus de la liste -->
+    
+    <div class="product-list">
+      <div class="product-card" *ngFor="let product of products; let i = index">
+        <div class="image-container">
+          <img [src]="product.image" alt="Product Image" class="product-image" />
+          <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+        <div class="product-details">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -3,9 +3,15 @@
 <nz-layout>
     <nz-header class="navbar">
       <div class="navbar-content">
-        <div class="logo">E-Commerce Dashboard</div>
+        <div routerLink="/home" class="logo">E-Commerce Dashboard</div>
   
         <div class="navbar-center">
+            <div class="nav-item">
+                <a routerLink="/home" routerLinkActive="active-link">
+                    <i class="bi bi-house-door"></i> Home
+                </a>
+              </div>
+
           <div class="nav-item">
             <a routerLink="/product" routerLinkActive="active-link">List Products</a>
           </div>
@@ -16,7 +22,7 @@
   
         <div class="cart-status">
             <nz-badge [nzCount]="cartCount" [nzOverflowCount]="99" [nzShowZero]="true" (click)="togglePendingCartDropdown()">
-                <i class="bi bi-cart" style="color: rgb(253, 253, 253); font-size: 18px; position: relative; top: 10px;"></i>
+                <i class="bi bi-cart" style="color: rgb(253, 253, 253); font-size: 18px; position: relative; top: 10px;cursor: pointer;"></i>
               </nz-badge>
               
               <div *ngIf="showPendingInvitesDropdown" class="css-1oknx5t">
@@ -62,7 +68,7 @@
                         </div>
                       </div>
               
-                      <h3>Total Price: {{ totalPrice | currency }}</h3>
+                      <h3>Total Price: <span class="titlePrice">{{ totalPrice | currency }}</span></h3>
                     </div>
               
                     <ng-template #emptyCart>
