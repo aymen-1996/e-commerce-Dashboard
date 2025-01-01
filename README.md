@@ -25,7 +25,7 @@
 ![Page change Password](screenshots/productList_Home.png)
 
 #### Video
-![Watch the video](https://drive.google.com/file/d/1k47OE2iR_n4I0oPgdIwNo5fxNGhaODuW/view?usp=drive_link)
+[Watch the video](https://drive.google.com/file/d/1k47OE2iR_n4I0oPgdIwNo5fxNGhaODuW/view?usp=drive_link)
 
 
 
