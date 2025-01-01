@@ -22,10 +22,12 @@
 ![Cart](screenshots/Cart.png)
 
 #### Page Home (It's plus)
-![Page change Password](screenshots/ChangePass.png)
+![Page change Password](screenshots/productList_Home.png)
 
 #### Video
-![Page Chat](screenshots/vedio.mp4)
+[Télécharger et regarder la vidéo](screenshots/vedio.mp4)
+
+
 
 ## Contributors
 
