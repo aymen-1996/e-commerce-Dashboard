@@ -1,4 +1,4 @@
-# Application NestJs and angular 16 ,Public Api( https://fakestoreapi.com)
+# Application angular 16 ,Public Api( https://fakestoreapi.com)
 
 ## Features
 
